@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_coffee_shops`. To experiment with that code, run `bin/console` for an interactive prompt. -->
 
 # Objectives
@@ -41,3 +42,6 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 Everyone interacting in the BestCoffeeShops project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/best_coffee_shops/blob/master/CODE_OF_CONDUCT.md).
 # Best-Coffee-Shops-cli-app
+=======
+
+>>>>>>> 7cb256e7de477b40d4dad049ce3cfc41f46ff27a
