@@ -1,8 +1,10 @@
-# BestCoffeeShops
+<!-- Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_coffee_shops`. To experiment with that code, run `bin/console` for an interactive prompt. -->
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_coffee_shops`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Objectives
 
-TODO: Delete this and the text above, and describe your gem
+To allow users to look for a great coffee shop to study in New York City
+
+Using this command line tool, users are able choose a coffeeshop based on the description, rating/reviews, location, contact info.
 
 ## Installation
 
@@ -20,9 +22,6 @@ Or install it yourself as:
 
     $ gem install best_coffee_shops
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/best_coffee_shops. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/eyi1/best_coffee_shops. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
