@@ -1,2 +1,3 @@
 class BestCoffeeShops::CLI
+
 end
