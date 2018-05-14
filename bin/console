@@ -8,7 +8,7 @@ require "best_coffee_shops"
 # with your gem easier. You can also use a different console, if you like.
 
 # (If you use this, don't forget to add pry to your Gemfile!)
-Pry.start
+# Pry.start
 
 require "irb"
 IRB.start(__FILE__)

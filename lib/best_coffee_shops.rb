@@ -1,6 +1,9 @@
-require_relative "../config/environment"
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
-module BestCoffeeShops
-  # Your code goes here...
-end
-
+#load libraries
+require_relative '../lib/best_coffee_shops/cli'
+require_relative '../lib/best_coffee_shops/scraper'
+require_relative '../lib/best_coffee_shops/version'
+require_relative '../lib/best_coffee_shops/store'
