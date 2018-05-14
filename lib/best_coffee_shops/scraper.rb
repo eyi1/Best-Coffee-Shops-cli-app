@@ -11,9 +11,7 @@ class Scraper
     end
 
     def scrape_coffeeshop_index   
-        scrape_page.css("section.c-mapstack__card")[2..30].map do |x|
-            x
-        end 
+        scrape_page.css("section.c-mapstack__card")[2..30].map {|index| index}
     end
     
     def create_coffeeshop
