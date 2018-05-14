@@ -16,13 +16,31 @@ class CLI
         
         puts ""
         puts "What coffeeshop would you like more information on? (Type a number)"
-        input = gets.strip.to_i
+        user_input = gets.strip.to_i
+        coffeeshop = Store.find(user_input)
+        print_coffeeshop_info(coffeeshop)
     end
 
-
     def print_list(input)
+        puts ""
         Store.all[input-1..input+8].each.with_index(input) do |coffeeshop, index|
         puts "#{index}. #{coffeeshop.name}"
         end
     end
+
+    def print_coffeeshop_info(coffeeshop)
+        puts ""
+        puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+        puts "Name:                 #{coffeeshop.name}"
+        puts "Location/Contact:     #{coffeeshop.contact}"
+        puts "Website:              #{coffeeshop.url}"
+        puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+        puts "Description:"         
+        puts ""
+        puts "#{coffeeshop.description}" 
+        puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+        
+        puts ""
+    end
+
 end

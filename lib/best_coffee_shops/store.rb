@@ -11,7 +11,7 @@ class Store
             element.css("div.c-mapstack__address").text,    
             element.css("div.c-entry-content p").text,
             element.css("ul.c-mapstack__services li a").attr("href").text)
-        end
+    end
 
     def initialize(name, contact, description, url)
         name = name.split(" ")
@@ -24,5 +24,9 @@ class Store
     
     def self.all
         @@all
+    end
+
+    def self.find(user_input)
+        @@all[user_input-1]
     end
 end
