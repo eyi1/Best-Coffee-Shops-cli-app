@@ -13,7 +13,7 @@ class Scraper
     end
     
     def create_coffeeshop
-        scrape_coffeeshop_index.each do |element| 
+        scrape_coffeeshop_index.each do |element|
             Store.new_from_index(element)    
         end
     end
