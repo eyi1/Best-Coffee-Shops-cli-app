@@ -5,15 +5,19 @@ class Scraper
         #webpage = Nokogiri::HTML(open("https://www.theinfatuation.com/new-york/guides/coffee-shops-nyc-for-doing-work"))
         #a.css("div.spot-block a h3").text = name 
         Nokogiri::HTML(open("https://ny.eater.com/maps/best-cafe-coffee-shop-new-york-city-brooklyn-queens"))
-        # or a.css("section.c-mapstack__card h2")
+        #Nokogiri::HTML(open("https://www.thrillist.com/drink/new-york/best-coffee-shops-in-nyc-by-neighborhood"))
+        # or a.css(section.c-mapstack__card h2)
+        #div.body-text__content
     end
 
     def scrape_coffeeshop_index   
-        index = scrape_page.css("section.c-mapstack__card")
+        scrape_page.css("section.c-mapstack__card")[2..30].map do |x|
+            x
+        end 
     end
     
     def create_coffeeshop
-        scrape_coffeeshop_index.each do |element|
+        scrape_coffeeshop_index.each do |element| 
             Store.new_from_index(element)    
         end
     end

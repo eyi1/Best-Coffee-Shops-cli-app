@@ -1,30 +1,28 @@
 require 'pry'
 class Store
     
-    attr_accessor :name, :location, :description, :website
-    
+    attr_accessor :name, :contact, :description, :url 
+
     @@all = []
     
     def self.new_from_index(element)    
         self.new(
-            element.css("h2").text, #name
-            element.css("div.c-mapstack__address").text, #location    
-            element.css("div.c-entry-content p").text, #description
-            element.css("a.p-button").attr("href").text #website/url     
-            )     
-    end
+            element.css("h2").text,
+            element.css("div.c-mapstack__address").text,    
+            element.css("div.c-entry-content p").text,
+            element.css("ul.c-mapstack__services li a").attr("href").text)
+        end
 
-    def initialize(name, location, description, website)
-        @name = name
-        @location = location
+    def initialize(name, contact, description, url)
+        name = name.split(" ")
+        @name = name[1..-1].join(" ")
+        @contact = contact
         @description = description
-        @website = website
+        @url = url
         @@all << self
     end
     
     def self.all
-        @@all[1..29]
+        @@all
     end
-
-
 end
