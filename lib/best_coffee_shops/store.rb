@@ -29,4 +29,6 @@ class Store
     def self.find(user_input)
         @@all[user_input-1]
     end
+
 end
+
