@@ -3,7 +3,7 @@
 
 To allow users to look for a great coffee shop to study in New York City
 
-Using this command line tool, users are able choose a coffeeshop based on the description, rating/reviews, location, contact info.
+Using this command line tool, users are able choose a coffee shop based on its description, location, and review.
 
 ## Installation
 
