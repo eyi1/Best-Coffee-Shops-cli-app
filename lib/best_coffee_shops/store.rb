@@ -1,4 +1,3 @@
-require 'pry'
 class Store
     
     attr_accessor :name, :address, :description, :url 
@@ -31,4 +30,3 @@ class Store
     end
 
 end
-

@@ -1,4 +1,3 @@
-require 'pry'
 class CLI
 
     def call
@@ -72,11 +71,3 @@ class CLI
     end
 
 end
-
-        # puts "Please choose what number coffeeshops you want to see: 1-10, 11-20, 21-29"
-        # input = gets.strip.to_i
-        # print_list(input)
-
-        # Store.all[input-1..input+8].each.with_index(input) do |coffeeshop, index|
-        # puts "#{index}. #{coffeeshop.name}"
-        # end
