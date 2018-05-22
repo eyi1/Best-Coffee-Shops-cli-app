@@ -1,22 +1,22 @@
 require 'pry'
 class Store
     
-    attr_accessor :name, :contact, :description, :url 
+    attr_accessor :name, :address, :description, :url 
 
     @@all = []
     
-    def self.new_from_index(element)    
+    def self.new_from_index(element)
         self.new(
-            element.css("h2").text,
-            element.css("div.c-mapstack__address").text,    
-            element.css("div.c-entry-content p").text,
-            element.css("ul.c-mapstack__services li a").attr("href").text)
+            element.css("h3").text,
+            element.css("small").text,    
+            element.css("div.spot-block__description p").text,
+            "https://www.theinfatuation.com/#{element.css("a").attribute("href").text}"
+            )
     end
 
-    def initialize(name, contact, description, url)
-        name = name.split(" ")
-        @name = name[1..-1].join(" ")
-        @contact = contact
+    def initialize(name, address, description, url)
+        @name = name
+        @address = address
         @description = description
         @url = url
         @@all << self

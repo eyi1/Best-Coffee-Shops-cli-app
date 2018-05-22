@@ -4,15 +4,16 @@ class CLI
     def call
         Scraper.new.create_coffeeshop
         puts ""
-        puts "-------------------------------------"
-        puts "Welcome to Top 29 Coffeeshops in NYC!"  
-        puts "-------------------------------------"
+        puts "--------------------------------------------"
+        puts "Welcome to:" 
+        puts "The Best Coffeeshops for Getting Work Done!"  
+        puts "--------------------------------------------"
         puts ""
         start
     end
 
     def start
-        Store.all[0..14].each.with_index(1) do |coffeeshop, index| 
+        Store.all[0..4].each.with_index(1) do |coffeeshop, index| 
             puts "#{index}. #{coffeeshop.name}"
         end
 
@@ -21,7 +22,7 @@ class CLI
         input = gets.strip
         puts ""
             if input == "next"
-                Store.all[15..29].each.with_index(16) do |coffeeshop, index|
+                Store.all[5..-1].each.with_index(6) do |coffeeshop, index|
                 puts "#{index}. #{coffeeshop.name}"
                 end
             end
@@ -60,8 +61,8 @@ class CLI
         puts ""
         puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
         puts "Name:                 #{coffeeshop.name}"
-        puts "Location/Contact:     #{coffeeshop.contact}"
-        puts "Website:              #{coffeeshop.url}"
+        puts "Address:             #{coffeeshop.address}"
+        puts "Review:               #{coffeeshop.url}"
         puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
         puts "Description:"         
         puts ""
