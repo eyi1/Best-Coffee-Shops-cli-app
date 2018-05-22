@@ -4,12 +4,12 @@ class Store
 
     @@all = []
     
-    def self.new_from_index(element)
+    def self.new_from_index(coffeeshop_index)
         self.new(
-            element.css("h3").text,
-            element.css("small").text,    
-            element.css("div.spot-block__description p").text,
-            "https://www.theinfatuation.com/#{element.css("a").attribute("href").text}"
+            coffeeshop_index.css("h3").text,
+            coffeeshop_index.css("small").text,    
+            coffeeshop_index.css("div.spot-block__description p").text,
+            "https://www.theinfatuation.com/#{coffeeshop_index.css("a").attribute("href").text}"
             )
     end
 

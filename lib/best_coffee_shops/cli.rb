@@ -59,9 +59,9 @@ class CLI
     def print_coffeeshop_info(coffeeshop)
         puts ""
         puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-        puts "Name:                 #{coffeeshop.name}"
-        puts "Address:             #{coffeeshop.address}"
-        puts "Review:               #{coffeeshop.url}"
+        puts "Name:                          #{coffeeshop.name}"
+        puts "Address:                      #{coffeeshop.address}"
+        puts "For more info:                 #{coffeeshop.url}"
         puts "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
         puts "Description:"         
         puts ""
