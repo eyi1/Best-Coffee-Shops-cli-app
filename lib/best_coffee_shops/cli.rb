@@ -43,8 +43,10 @@ attr_accessor :user_input
     def get_response
         puts "What coffeeshop would you like more information on? (Type a number from the list)"
         @user_input = gets.strip
-
-        if @user_input.to_i > Store.all.count
+        
+        if @user_input == 'exit'
+            exit
+        elsif @user_input.to_i > Store.all.count
             puts "That is not a valid number."
             puts ""
             get_response
@@ -52,8 +54,6 @@ attr_accessor :user_input
             puts "That is not a valid number."
             puts ""
             get_response
-        elsif @user_input == 'exit'
-            exit
         else
             coffeeshop = Store.find(@user_input.to_i)
             print_coffeeshop_info(coffeeshop)
