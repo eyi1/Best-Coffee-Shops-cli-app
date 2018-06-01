@@ -1,9 +1,8 @@
-
 # Objectives
 
-To allow users to look for a great coffee shop to study in New York City
+To allow users to look for a great NYC coffee shop for studying/getting work done. 
 
-Using this command line tool, users are able choose a coffee shop based on its description, location, and review.
+Using this command line tool, users can find the address and a short description about each coffee shop and a link for more information such as reviews and contact info.
 
 ## Installation
 
@@ -15,7 +14,7 @@ gem 'best_coffee_shops'
 
 And then execute:
 
-    $ bundle
+    <!-- $ bundle -->
 
 Or install it yourself as:
 
