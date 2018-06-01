@@ -8,8 +8,7 @@ attr_accessor :user_input
         puts "-----------------------------------------------------------"
         puts "Welcome to:" 
         puts "The Best NYC Coffee Shops for Camping Out With Your Laptop!"  
-        puts "-----------------------------------------------------------
-        "
+        puts "-----------------------------------------------------------"
         puts ""
         start
     end
@@ -41,19 +40,24 @@ attr_accessor :user_input
     end
 
     def get_response
-        puts "What coffeeshop would you like more information on? (Type a number from the list)"
+        puts "What coffeeshop would you like more information on? (Type a name or number from the list)"
         @user_input = gets.strip
         
         if @user_input == 'exit'
-            exit
+            exit      
+        elsif @user_input.match(/[a-zA-Z]/)
+            coffeeshop = Store.all.detect do |shop|
+                @user_input.downcase == shop.name.downcase
+            end
+            print_coffeeshop_info(coffeeshop) 
         elsif @user_input.to_i > Store.all.count
             puts "That is not a valid number."
             puts ""
-            get_response
+            get_response      
         elsif @user_input.to_i <= 0
             puts "That is not a valid number."
             puts ""
-            get_response
+            get_response       
         else
             coffeeshop = Store.find(@user_input.to_i)
             print_coffeeshop_info(coffeeshop)
