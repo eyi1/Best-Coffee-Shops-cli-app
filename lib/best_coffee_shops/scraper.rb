@@ -8,7 +8,7 @@ class Scraper
         scrape_page.css("div.spot-block")[8..20].map {|index| index}
     end
     
-    def create_coffeeshop
+    def create_coffeeshops
         scrape_coffeeshop_index.each do |coffeeshop_index|
             Store.new_from_index(coffeeshop_index)    
         end

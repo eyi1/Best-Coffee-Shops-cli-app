@@ -3,7 +3,7 @@ class CLI
 attr_accessor :user_input
 
     def call
-        Scraper.new.create_coffeeshop
+        Scraper.new.create_coffeeshops
         puts ""
         puts "-----------------------------------------------------------"
         puts "Welcome to:" 
@@ -17,51 +17,45 @@ attr_accessor :user_input
         Store.all[0..4].each.with_index(1) do |coffeeshop, index| 
             puts "#{index}. #{coffeeshop.name}"
         end
-
-        puts ""
-        puts "Type 'next' to see more:"
-        puts "Type 'exit' to close the app:"   
-        puts ""   
-        @user_input = gets.strip
-        puts ""
-            if @user_input == "next"
-                Store.all[5..-1].each.with_index(6) do |coffeeshop, index|
-                puts "#{index}. #{coffeeshop.name}"
-                end
-            elsif @user_input == "exit"
-                exit
-            end
         
         puts ""
+        puts "Type 'next' to see more or 'exit' to close the app."
         get_response
-
-        puts ""
         ask
     end
 
     def get_response
-        puts "What coffeeshop would you like more information on? (Type a name or number from the list)"
+        puts "Which coffeeshop would you like more information on?"
         @user_input = gets.strip
         
-        if @user_input == 'exit'
+        if @user_input == "next"
+            puts ""
+            Store.all[5..-1].each.with_index(6) do |coffeeshop, index|
+            puts "#{index}. #{coffeeshop.name}"
+            end
+            puts ""
+            get_response
+        elsif @user_input == 'exit'
             exit      
         elsif @user_input.match(/[a-zA-Z]/)
-            coffeeshop = Store.all.detect do |shop|
+            if coffeeshop = Store.all.detect do |shop|
                 @user_input.downcase == shop.name.downcase
+                end
+                print_coffeeshop_info(coffeeshop) 
+            else 
+                puts "Please give a valid response."
+                puts ""
+                start
             end
-            print_coffeeshop_info(coffeeshop) 
-        elsif @user_input.to_i > Store.all.count
+        elsif @user_input.to_i > Store.all.count || @user_input.to_i <= 0 
             puts "That is not a valid number."
             puts ""
-            get_response      
-        elsif @user_input.to_i <= 0
-            puts "That is not a valid number."
-            puts ""
-            get_response       
+            get_response        
         else
             coffeeshop = Store.find(@user_input.to_i)
+            #@user_input.match(/[0-9]/) || @user_input.match(/[0-9]{2}/)
             print_coffeeshop_info(coffeeshop)
-        end  
+        end
     end
 
     def ask
