@@ -8,7 +8,7 @@ class Store
         self.new(
             coffeeshop_index.css("h3").text,
             coffeeshop_index.css("small").text,    
-            coffeeshop_index.css("div.spot-block__description p").text,
+            coffeeshop_index.css("div.spot-block__description-section p").text,
             "https://www.theinfatuation.com/#{coffeeshop_index.css("a").attribute("href").text}"
             )
     end
